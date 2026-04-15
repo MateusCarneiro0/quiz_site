@@ -7,10 +7,7 @@ function App() {
 
   const [question, setQuestion] = useState(data[numQuestion]);
 
-  function onHandleCheckQuestion() {
-    
-
-  } //O estado derivado age como um estado normal e muda quando outro estado muda
+  const [isChecked,setIsChecked] = useState(null)  
   
   function onHandleNext() {
     setNumQuestion((n) => n >= 5 ? n : n+=1)
@@ -31,10 +28,11 @@ function App() {
         titleQuestion={question.titulo}
         numberQuestion={numQuestion + 1}
         alternatives={question.alternativas}
+        checked={isChecked}
       />
       <div className="buttons">
         {numQuestion ? <Button onHandleClick={onHandlePrevious}>Previous</Button>:null}
-        <Button>Check Question</Button>
+        <Button style={{cursor: !question.marked ? "not-allowed":null }} onHandleClick={() =>  setIsChecked((c) => question.marked === null ? null:question.alternativas[question.marked].correct)}>Check Question</Button>
         {numQuestion < 4 ? <Button onHandleClick={onHandleNext}>Next</Button>: <Button>Finish Quiz</Button>}
       </div>
     </>
@@ -46,6 +44,7 @@ function Question({
   numberQuestion,
   alternatives,
   setQuestion,
+  checked
 }) {
   const letters = ["A", "B", "C", "D", "E"];
   function onHandleMark(id) {
@@ -67,6 +66,7 @@ function Question({
             key={i}
             indexQuestion={i}
             onClickMark={onHandleMark}
+            checked={checked}
           />
         );
       })}
@@ -79,12 +79,13 @@ function Alternative({
   marked,
   onClickMark,
   indexQuestion,
+  checked
 }) {
   return (
     <div className="alternatives">
       <button
         onClick={() => onClickMark(indexQuestion)}
-        className={`alternative ${marked ? `marked` : ``}`}
+        className={`alternative ${marked ? `marked` : ``} ${marked ? checked === null ? ``:checked ? `correct`:`wrong`:``}`}
       >
         <div className="circle">{letter}</div>
         <p>{alternativeText}</p>
@@ -99,9 +100,9 @@ function Logo() {
     </header>
   );
 }
-function Button({ children, onHandleClick }) {
+function Button({ children, onHandleClick, style }) {
   return (
-    <button className="button" onClick={onHandleClick}>
+    <button className="button" style={style} onClick={onHandleClick}>
       {children}
     </button>
   );

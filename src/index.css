@@ -27,8 +27,10 @@
 }
 .marked > div.circle {
   color:white;
-  background-color: black
+  background-color: black;
+  transition: 0.2s ease-out;
 }
+.buttonCheck
 .button{
   margin-right: 150px;
 }
@@ -37,4 +39,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.correct{
+  border-color:greenyellow;
+  color:green
+}
+.wrong {
+  border-color: red;
+  color:red;
 }
