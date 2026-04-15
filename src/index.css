@@ -1,7 +1,7 @@
 .alternative {
   background-color: white;
   border-radius: 15px;
-  border: 2px solid;
+  border: 2px solid gray;
   display: flex;
   align-items: center;
   margin: 6px;
@@ -9,20 +9,28 @@
 }
 .circle {
   border: 2px solid;
-  border-radius: 15px;
+  border-radius: 50%;
   border-color: black;
-  margin:6px; 
+  margin:6px;
+  aspect-ratio: 1;
+  width: 15px;
+  height: 15px;
 }
 .alternative > p{
   padding-left: 10px;
 }
 .alternatives :hover{
-  background-color: rgb(185, 185, 185);
-  color:black;
   border-color: black;
 }
+.marked {
+  border-color:black ;
+}
+.marked > div.circle {
+  color:white;
+  background-color: black
+}
 .button{
-  margin-right: 300px;
+  margin-right: 150px;
 }
 .buttons{
   padding-top: 100px;
