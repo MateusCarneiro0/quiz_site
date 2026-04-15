@@ -7,16 +7,17 @@ function App() {
 
   const [question, setQuestion] = useState(data[numQuestion]);
 
-  const [isChecked,setIsChecked] = useState(null)  
-  
-  function onHandleNext() {
-    setNumQuestion((n) => n >= 5 ? n : n+=1)
-    setQuestion(() => data[numQuestion + 1])
+  const [isChecked, setIsChecked] = useState([null, null]);
 
+  function onHandleNext() {
+    setNumQuestion((n) => (n >= 5 ? n : (n += 1)));
+    setQuestion(() => data[numQuestion + 1]);
+    setIsChecked(() => [null,null])
   }
   function onHandlePrevious() {
     setNumQuestion((n) => n - 1);
-    setQuestion(() => data[numQuestion - 1])
+    setQuestion(() => data[numQuestion - 1]);
+    setIsChecked(() => [null,null])
   }
 
   return (
@@ -31,9 +32,29 @@ function App() {
         checked={isChecked}
       />
       <div className="buttons">
-        {numQuestion ? <Button onHandleClick={onHandlePrevious}>Previous</Button>:null}
-        <Button style={{cursor: !question.marked ? "not-allowed":null }} onHandleClick={() =>  setIsChecked((c) => question.marked === null ? null:question.alternativas[question.marked].correct)}>Check Question</Button>
-        {numQuestion < 4 ? <Button onHandleClick={onHandleNext}>Next</Button>: <Button>Finish Quiz</Button>}
+        {numQuestion ? (
+          <Button onHandleClick={onHandlePrevious}>Previous</Button>
+        ) : null}
+        <Button
+          style={{ cursor: question.marked === false || question.marked === null ? "not-allowed" : "" }}
+          onHandleClick={() =>
+            setIsChecked((c) =>
+              question.marked === null
+                ? [null, null]
+                : [
+                    question.alternativas[question.marked].correct,
+                    question.marked,
+                  ]
+            )
+          }
+        >
+          Check Question
+        </Button>
+        {numQuestion < 4 ? (
+          <Button onHandleClick={onHandleNext}>Next</Button>
+        ) : (
+          <Button>Finish Quiz</Button>
+        )}
       </div>
     </>
   );
@@ -44,7 +65,7 @@ function Question({
   numberQuestion,
   alternatives,
   setQuestion,
-  checked
+  checked,
 }) {
   const letters = ["A", "B", "C", "D", "E"];
   function onHandleMark(id) {
@@ -58,6 +79,17 @@ function Question({
     <div className="question">
       {numberQuestion}.<p className="title">{titleQuestion}</p>
       {alternatives.map((q, i) => {
+        const check =
+          checked[0] === null && checked[1] === null
+            ? null
+            : checked[1] === i
+            ? checked[0]
+              ? "correct"
+              : "wrong"
+            : q.correct
+            ? "correct"
+            : "";
+
         return (
           <Alternative
             marked={marked === i}
@@ -66,7 +98,7 @@ function Question({
             key={i}
             indexQuestion={i}
             onClickMark={onHandleMark}
-            checked={checked}
+            checked={check}
           />
         );
       })}
@@ -79,13 +111,16 @@ function Alternative({
   marked,
   onClickMark,
   indexQuestion,
-  checked
+  checked,
+  correct_wrong,
 }) {
   return (
     <div className="alternatives">
       <button
         onClick={() => onClickMark(indexQuestion)}
-        className={`alternative ${marked ? `marked` : ``} ${marked ? checked === null ? ``:checked ? `correct`:`wrong`:``}`}
+        className={`alternative ${marked && !checked ? `marked` : ``} ${
+          checked === null ? "" : checked
+        }`}
       >
         <div className="circle">{letter}</div>
         <p>{alternativeText}</p>
@@ -108,3 +143,7 @@ function Button({ children, onHandleClick, style }) {
   );
 }
 export default App;
+
+//O estado derivado continua sendo re-renderizado quando o estado real muda
+
+//Se o estado persistir na hora de fazer uma mudança sempre faça 

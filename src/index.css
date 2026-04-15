@@ -7,6 +7,14 @@
   margin: 6px;
   width:100%;
 }
+.correct{
+  border-color:greenyellow;
+  color:green
+}
+.wrong {
+  border-color: red;
+  color:red;
+}
 .circle {
   border: 2px solid;
   border-radius: 50%;
@@ -39,12 +47,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.correct{
-  border-color:greenyellow;
-  color:green
-}
-.wrong {
-  border-color: red;
-  color:red;
 }
