@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 .alternative {
   background-color: white;
@@ -7,34 +7,34 @@
   display: flex;
   align-items: center;
   margin: 6px;
-  width:100%;
+  width: 100%;
 }
 .circle {
   border: 2px solid;
   border-radius: 50%;
   border-color: black;
-  margin:6px;
+  margin: 6px;
   aspect-ratio: 1;
   width: 15px;
   height: 15px;
 }
-.alternative > p{
+.alternative > p {
   padding-left: 10px;
   font-family: "Work Sans";
 }
 .alternatives :hover {
   border-color: black;
-  cursor:pointer;
+  cursor: pointer;
 }
 .marked {
-  border-color:black ;
+  border-color: black;
 }
 .marked > div.circle {
-  color:white;
+  color: white;
   background-color: black;
   transition: 0.2s ease-out;
 }
-.button{
+.button {
   background-color: rgb(255, 182, 45);
   border: 0.5px solid rgb(255, 182, 45);
   border-radius: 4px;
@@ -44,32 +44,32 @@
   align-items: center;
   cursor: pointer;
 }
-.buttons{
+.buttons {
   padding-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap:100px;
+  gap: 100px;
 }
-.correct{
+.correct {
   pointer-events: none;
-  border-color:greenyellow;
-  color:green
+  border-color: greenyellow;
+  color: green;
 }
 .correct > div.circle {
-  border-color:rgb(155, 233, 39);
-  background-color:rgb(155, 233, 39);
-  color:white
+  border-color: rgb(155, 233, 39);
+  background-color: rgb(155, 233, 39);
+  color: white;
 }
 .wrong {
   border-color: red;
-  color:red;
+  color: red;
   pointer-events: none;
 }
 .wrong > div.circle {
   border-color: red;
   background-color: red;
-  color:white;
+  color: white;
 }
 .explication_deactive {
   display: none;
@@ -79,19 +79,18 @@
   justify-content: center;
   align-items: center;
   display: flex;
-
 }
-.explication_active > p{
+.explication_active > p {
   color: green;
   width: 60%;
   font-family: "Work Sans";
 }
-.logo{
+.logo {
   align-self: center;
   justify-content: center;
-  display:flex;
+  display: flex;
 }
-.logo > h1{
+.logo > h1 {
   font-family: "Bitcount Grid Double";
 }
 .title {

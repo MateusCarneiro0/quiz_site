@@ -25,31 +25,66 @@ const data = [
     ],
     marked: null,
     correct: null,
-    explicacao: "Em Python, índices negativos são usados para acessar elementos de trás para frente, sendo -1 o último elemento. Já o fatiamento [0:2] é exclusivo no limite superior, retornando apenas os índices 0 e 1."
+    explicacao:
+      "Em Python, índices negativos são usados para acessar elementos de trás para frente, sendo -1 o último elemento. Já o fatiamento [0:2] é exclusivo no limite superior, retornando apenas os índices 0 e 1.",
   },
   {
     titulo: "Métodos de Lista",
     alternativas: [
-      { texto: "append() adiciona um elemento ao final da lista", correct: true, marked: false },
-      { texto: "add() é o método padrão para inserir itens em listas", correct: false, marked: false },
-      { texto: "push() é usado para empilhar valores na lista", correct: false, marked: false },
-      { texto: "extend() remove todos os elementos da lista", correct: false, marked: false },
+      {
+        texto: "append() adiciona um elemento ao final da lista",
+        correct: true,
+        marked: false,
+      },
+      {
+        texto: "add() é o método padrão para inserir itens em listas",
+        correct: false,
+        marked: false,
+      },
+      {
+        texto: "push() é usado para empilhar valores na lista",
+        correct: false,
+        marked: false,
+      },
+      {
+        texto: "extend() remove todos os elementos da lista",
+        correct: false,
+        marked: false,
+      },
     ],
     marked: null,
     correct: null,
-    explicacao: "O método 'append()' é a forma padrão de adicionar um único objeto ao final de uma lista. O método 'add()' é usado em Sets, e 'push()' não existe nativamente para listas em Python (é comum no JavaScript)."
+    explicacao:
+      "O método 'append()' é a forma padrão de adicionar um único objeto ao final de uma lista. O método 'add()' é usado em Sets, e 'push()' não existe nativamente para listas em Python (é comum no JavaScript).",
   },
   {
     titulo: "Estruturas de Dados",
     alternativas: [
-      { texto: "Tuplas são mutáveis e podem ser alteradas", marked: false, correct: false },
-      { texto: "Dicionários são indexados por números sequenciais", marked: false, correct: false },
-      { texto: "Listas são mutáveis, permitindo alteração de seus itens", correct: true, marked: false },
-      { texto: "Sets (conjuntos) permitem elementos duplicados", marked: false, correct: false },
+      {
+        texto: "Tuplas são mutáveis e podem ser alteradas",
+        marked: false,
+        correct: false,
+      },
+      {
+        texto: "Dicionários são indexados por números sequenciais",
+        marked: false,
+        correct: false,
+      },
+      {
+        texto: "Listas são mutáveis, permitindo alteração de seus itens",
+        correct: true,
+        marked: false,
+      },
+      {
+        texto: "Sets (conjuntos) permitem elementos duplicados",
+        marked: false,
+        correct: false,
+      },
     ],
     marked: null,
     correct: null,
-    explicacao: "Listas são coleções mutáveis, o que significa que você pode alterar, adicionar ou remover itens após a criação. Tuplas, por outro lado, são imutáveis, e Sets não permitem valores duplicados."
+    explicacao:
+      "Listas são coleções mutáveis, o que significa que você pode alterar, adicionar ou remover itens após a criação. Tuplas, por outro lado, são imutáveis, e Sets não permitem valores duplicados.",
   },
   {
     titulo: "Funções Embutidas",
@@ -59,7 +94,11 @@ const data = [
         marked: false,
         correct: false,
       },
-      { texto: "range(5) gera uma lista de 1 a 5", marked: false, correct: false },
+      {
+        texto: "range(5) gera uma lista de 1 a 5",
+        marked: false,
+        correct: false,
+      },
       {
         texto: "len() retorna a quantidade de itens de um objeto",
         correct: true,
@@ -73,19 +112,37 @@ const data = [
     ],
     marked: null,
     correct: null,
-    explicacao: "A função 'len()' (abreviação de length) é a função padrão do Python para obter o número de itens em listas, strings, dicionários e outras coleções."
+    explicacao:
+      "A função 'len()' (abreviação de length) é a função padrão do Python para obter o número de itens em listas, strings, dicionários e outras coleções.",
   },
   {
     titulo: "Condicionais e Identação",
     alternativas: [
-      { texto: "Python utiliza chaves {} para definir blocos de código", marked: false, correct: false },
-      { texto: "A identação é obrigatória para definir a hierarquia do código", correct: true, marked: false },
-      { texto: "O operador '&&' é usado para a lógica 'E'", marked: false, correct: false },
-      { texto: "O comando 'else if' é escrito exatamente assim em Python", marked: false, correct: false },
+      {
+        texto: "Python utiliza chaves {} para definir blocos de código",
+        marked: false,
+        correct: false,
+      },
+      {
+        texto: "A identação é obrigatória para definir a hierarquia do código",
+        correct: true,
+        marked: false,
+      },
+      {
+        texto: "O operador '&&' é usado para a lógica 'E'",
+        marked: false,
+        correct: false,
+      },
+      {
+        texto: "O comando 'else if' é escrito exatamente assim em Python",
+        marked: false,
+        correct: false,
+      },
     ],
     marked: null,
     correct: null,
-    explicacao: "Diferente de C++ ou Java, Python utiliza a identação (espaços em branco) para determinar o escopo de funções, loops e condicionais. Além disso, usa 'and' em vez de '&&' e 'elif' em vez de 'else if'."
+    explicacao:
+      "Diferente de C++ ou Java, Python utiliza a identação (espaços em branco) para determinar o escopo de funções, loops e condicionais. Além disso, usa 'and' em vez de '&&' e 'elif' em vez de 'else if'.",
   },
   {
     titulo: "List Comprehensions",
@@ -97,7 +154,8 @@ const data = [
     ],
     marked: null,
     correct: null,
-    explicacao: "List Comprehensions usam colchetes '[]' e fornecem uma sintaxe curta para criar uma nova lista baseada em valores de uma lista existente."
+    explicacao:
+      "List Comprehensions usam colchetes '[]' e fornecem uma sintaxe curta para criar uma nova lista baseada em valores de uma lista existente.",
   },
   {
     titulo: "Tratamento de Exceções",
@@ -109,7 +167,8 @@ const data = [
     ],
     marked: null,
     correct: null,
-    explicacao: "Em Python, utilizamos o bloco 'try' para testar um código e 'except' para capturar e tratar a exceção caso ela ocorra."
+    explicacao:
+      "Em Python, utilizamos o bloco 'try' para testar um código e 'except' para capturar e tratar a exceção caso ela ocorra.",
   },
   {
     titulo: "Métodos de Dicionário",
@@ -121,7 +180,8 @@ const data = [
     ],
     marked: null,
     correct: null,
-    explicacao: "O método 'get()' é preferível pois retorna 'None' (ou um valor padrão) se a chave não existir, evitando que o programa lance um erro de KeyError."
+    explicacao:
+      "O método 'get()' é preferível pois retorna 'None' (ou um valor padrão) se a chave não existir, evitando que o programa lance um erro de KeyError.",
   },
   {
     titulo: "Bloco Principal",
@@ -133,19 +193,37 @@ const data = [
     ],
     marked: null,
     correct: null,
-    explicacao: "Esta linha verifica se o script está sendo executado diretamente ou importado como módulo, permitindo organizar o ponto de entrada do programa."
+    explicacao:
+      "Esta linha verifica se o script está sendo executado diretamente ou importado como módulo, permitindo organizar o ponto de entrada do programa.",
   },
   {
     titulo: "Orientação a Objetos",
     alternativas: [
-      { texto: "A palavra 'this' referencia o objeto", correct: false, marked: false },
-      { texto: "O método '__init__' é o construtor", correct: true, marked: false },
-      { texto: "Classes são definidas com 'struct'", correct: false, marked: false },
-      { texto: "Atributos privados começam com @", correct: false, marked: false },
+      {
+        texto: "A palavra 'this' referencia o objeto",
+        correct: false,
+        marked: false,
+      },
+      {
+        texto: "O método '__init__' é o construtor",
+        correct: true,
+        marked: false,
+      },
+      {
+        texto: "Classes são definidas com 'struct'",
+        correct: false,
+        marked: false,
+      },
+      {
+        texto: "Atributos privados começam com @",
+        correct: false,
+        marked: false,
+      },
     ],
     marked: null,
     correct: null,
-    explicacao: "O método especial '__init__' é chamado automaticamente quando uma nova instância da classe é criada, servindo para inicializar os atributos."
+    explicacao:
+      "O método especial '__init__' é chamado automaticamente quando uma nova instância da classe é criada, servindo para inicializar os atributos.",
   },
   {
     titulo: "Formatação de Strings",
@@ -157,19 +235,33 @@ const data = [
     ],
     marked: null,
     correct: null,
-    explicacao: "As 'f-strings' (literal string interpolations) são a forma mais moderna e eficiente de formatar strings no Python, bastando colocar um 'f' antes das aspas."
+    explicacao:
+      "As 'f-strings' (literal string interpolations) são a forma mais moderna e eficiente de formatar strings no Python, bastando colocar um 'f' antes das aspas.",
   },
   {
     titulo: "Funções Lambda",
     alternativas: [
-      { texto: "São funções nomeadas complexas", correct: false, marked: false },
-      { texto: "São funções anônimas de uma linha", correct: true, marked: false },
+      {
+        texto: "São funções nomeadas complexas",
+        correct: false,
+        marked: false,
+      },
+      {
+        texto: "São funções anônimas de uma linha",
+        correct: true,
+        marked: false,
+      },
       { texto: "Não podem receber argumentos", correct: false, marked: false },
-      { texto: "Substituem totalmente o comando 'def'", correct: false, marked: false },
+      {
+        texto: "Substituem totalmente o comando 'def'",
+        correct: false,
+        marked: false,
+      },
     ],
     marked: null,
     correct: null,
-    explicacao: "Lambdas são pequenas funções anônimas que podem ter qualquer número de argumentos, mas apenas uma expressão em seu corpo."
+    explicacao:
+      "Lambdas são pequenas funções anônimas que podem ter qualquer número de argumentos, mas apenas uma expressão em seu corpo.",
   },
   {
     titulo: "Gerenciamento de Arquivos",
@@ -181,7 +273,8 @@ const data = [
     ],
     marked: null,
     correct: null,
-    explicacao: "O gerenciador de contexto 'with' garante que o arquivo seja fechado corretamente após o uso, mesmo que ocorra um erro durante a leitura ou escrita."
+    explicacao:
+      "O gerenciador de contexto 'with' garante que o arquivo seja fechado corretamente após o uso, mesmo que ocorra um erro durante a leitura ou escrita.",
   },
   {
     titulo: "Função Zip",
@@ -193,7 +286,8 @@ const data = [
     ],
     marked: null,
     correct: null,
-    explicacao: "A função 'zip()' pega dois ou mais iteráveis e os combina em tuplas, facilitando a iteração paralela sobre múltiplas coleções."
+    explicacao:
+      "A função 'zip()' pega dois ou mais iteráveis e os combina em tuplas, facilitando a iteração paralela sobre múltiplas coleções.",
   },
   {
     titulo: "Operadores Lógicos",
@@ -205,7 +299,8 @@ const data = [
     ],
     marked: null,
     correct: null,
-    explicacao: "Python utiliza palavras em inglês (and, or, not) em vez de símbolos para seus operadores lógicos, o que torna o código mais legível e próximo da linguagem natural."
+    explicacao:
+      "Python utiliza palavras em inglês (and, or, not) em vez de símbolos para seus operadores lógicos, o que torna o código mais legível e próximo da linguagem natural.",
   },
 ];
 export default data;
