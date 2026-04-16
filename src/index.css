@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 .alternative {
   background-color: white;
   border-radius: 15px;
@@ -18,6 +20,7 @@
 }
 .alternative > p{
   padding-left: 10px;
+  font-family: "Work Sans";
 }
 .alternatives :hover {
   border-color: black;
@@ -67,4 +70,30 @@
   border-color: red;
   background-color: red;
   color:white;
+}
+.explication_deactive {
+  display: none;
+}
+.explication_active {
+  transition: 0.5s ease-in;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+}
+.explication_active > p{
+  color: green;
+  width: 60%;
+  font-family: "Work Sans";
+}
+.logo{
+  align-self: center;
+  justify-content: center;
+  display:flex;
+}
+.logo > h1{
+  font-family: "Bitcount Grid Double";
+}
+.title {
+  font-family: "Work Sans";
 }

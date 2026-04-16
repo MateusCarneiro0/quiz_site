@@ -30,6 +30,7 @@ function App() {
         numberQuestion={numQuestion + 1}
         alternatives={question.alternativas}
         checked={isChecked}
+        explicationText={question.explicacao}
       />
       <div className="buttons">
         {numQuestion ? (
@@ -66,6 +67,7 @@ function Question({
   alternatives,
   setQuestion,
   checked,
+  explicationText
 }) {
   const letters = ["A", "B", "C", "D", "E"];
   function onHandleMark(id) {
@@ -102,8 +104,8 @@ function Question({
           />
         );
       })}
-      <div className={`explication`}>
-        {}
+      <div className={`${checked[0] === null && checked[1] === null ? "explication_deactive":"explication_active"}`}>
+        <p>Explicação:{explicationText}</p>
       </div>
     </div>
   );
@@ -132,8 +134,8 @@ function Alternative({
 }
 function Logo() {
   return (
-    <header style={{ alignSelf: "center" }} className="logo">
-      <h1>The Quiz</h1>
+    <header className="logo">
+      <h1>The Quiz Of Python</h1>
     </header>
   );
 }
