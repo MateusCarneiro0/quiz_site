@@ -10,7 +10,7 @@ function App() {
   const [isChecked, setIsChecked] = useState([null, null]);
 
   function onHandleNext() {
-    setNumQuestion((n) => (n >= 5 ? n : (n += 1)));
+    setNumQuestion((n) => (n >= data.length ? n : (n += 1)));
     setQuestion(() => data[numQuestion + 1]);
     setIsChecked(() => [null,null])
   }
@@ -35,25 +35,25 @@ function App() {
         {numQuestion ? (
           <Button onHandleClick={onHandlePrevious}>Previous</Button>
         ) : null}
-        <Button
-          style={{ cursor: question.marked === false || question.marked === null ? "not-allowed" : "" }}
+        {question.marked !== null ? <Button
           onHandleClick={() =>
             setIsChecked((c) =>
-              question.marked === null
+              c[0] === null && c[1] === null ?
+              (question.marked === null
                 ? [null, null]
                 : [
                     question.alternativas[question.marked].correct,
                     question.marked,
                   ]
-            )
+            ):c)
           }
         >
           Check Question
-        </Button>
-        {numQuestion < 4 ? (
+        </Button>:null}
+        {numQuestion < data.length - 1 ? (
           <Button onHandleClick={onHandleNext}>Next</Button>
         ) : (
-          <Button>Finish Quiz</Button>
+          null
         )}
       </div>
     </>
@@ -102,6 +102,9 @@ function Question({
           />
         );
       })}
+      <div className={`explication`}>
+        {}
+      </div>
     </div>
   );
 }
@@ -112,7 +115,6 @@ function Alternative({
   onClickMark,
   indexQuestion,
   checked,
-  correct_wrong,
 }) {
   return (
     <div className="alternatives">
@@ -135,9 +137,9 @@ function Logo() {
     </header>
   );
 }
-function Button({ children, onHandleClick, style }) {
+function Button({ children, onHandleClick }) {
   return (
-    <button className="button" style={style} onClick={onHandleClick}>
+    <button className="button" onClick={onHandleClick}>
       {children}
     </button>
   );

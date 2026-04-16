@@ -7,14 +7,6 @@
   margin: 6px;
   width:100%;
 }
-.correct{
-  border-color:greenyellow;
-  color:green
-}
-.wrong {
-  border-color: red;
-  color:red;
-}
 .circle {
   border: 2px solid;
   border-radius: 50%;
@@ -27,8 +19,9 @@
 .alternative > p{
   padding-left: 10px;
 }
-.alternatives :hover{
+.alternatives :hover {
   border-color: black;
+  cursor:pointer;
 }
 .marked {
   border-color:black ;
@@ -38,13 +31,40 @@
   background-color: black;
   transition: 0.2s ease-out;
 }
-.buttonCheck
 .button{
-  margin-right: 150px;
+  background-color: rgb(255, 182, 45);
+  border: 0.5px solid rgb(255, 182, 45);
+  border-radius: 4px;
+  width: 15%;
+  height: 40px;
+  color: white;
+  align-items: center;
+  cursor: pointer;
 }
 .buttons{
   padding-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap:100px;
+}
+.correct{
+  pointer-events: none;
+  border-color:greenyellow;
+  color:green
+}
+.correct > div.circle {
+  border-color:rgb(155, 233, 39);
+  background-color:rgb(155, 233, 39);
+  color:white
+}
+.wrong {
+  border-color: red;
+  color:red;
+  pointer-events: none;
+}
+.wrong > div.circle {
+  border-color: red;
+  background-color: red;
+  color:white;
 }
