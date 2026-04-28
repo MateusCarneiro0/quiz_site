@@ -4,7 +4,7 @@ import { useState } from "react";
 import Button from "./Components/Button.js";
 import Question from "./Components/Question.js";
 import Logo from "./Components/Logo.js";
-
+import "animate.css"
 function App() {
   const [numQuestion, setNumQuestion] = useState(0);
 
