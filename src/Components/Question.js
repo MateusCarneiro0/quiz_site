@@ -1,5 +1,6 @@
+import { memo } from "react";
 import Alternative from "./Alternative";
-export default function Question({
+const Question = memo( function Question({
     marked,
     titleQuestion,
     numberQuestion,
@@ -54,4 +55,6 @@ export default function Question({
         </div>
       </div>
     );
-  }
+  })
+
+export default Question

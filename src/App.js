@@ -4,7 +4,8 @@ import { useState } from "react";
 import Button from "./Components/Button.js";
 import Question from "./Components/Question.js";
 import Logo from "./Components/Logo.js";
-import "animate.css"
+import "animate.css";
+import { useEffect } from "react";
 function App() {
   const [numQuestion, setNumQuestion] = useState(0);
 
@@ -22,6 +23,11 @@ function App() {
     setQuestion(() => data[numQuestion - 1]);
     setIsChecked(() => [null, null]);
   }
+  useEffect(() => {
+    document.title = `Question ${numQuestion + 1}`
+
+    return () => document.title = "Quiz Python"
+  },[numQuestion])
 
   return (
     <>

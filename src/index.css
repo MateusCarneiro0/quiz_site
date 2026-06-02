@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+ 
+:root{
+  --greenUtil:rgb(155, 233, 39)
+}
 
 .alternative {
   background-color: white;
@@ -54,7 +58,7 @@
 .correct {
   pointer-events: none;
   border-color: greenyellow;
-  color: green;
+  color: greenyellow;
 }
 .correct > div.circle {
   border-color: rgb(155, 233, 39);
